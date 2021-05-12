@@ -8,8 +8,9 @@
       <list>
         <option value="$PROJECT_DIR$/spring-boot-long-demo/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-demo-two/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-boot-demo-one/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-boot-demo-three/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-demo-03/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-fan-demo4/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-boot-fan-demo5/pom.xml" />
       </list>
     </option>
   </component>

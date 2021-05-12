@@ -1,0 +1,36 @@
+
+jasypt:
+  encryptor:
+    password: 147258369
+
+server:
+   port:
+     8090
+food:
+   meat:
+      五花肉
+   rice:
+      杂交水稻
+   seasoning:
+         - 咖喱
+         - 蜜汁
+         - 原味
+boo:
+   true
+emp:
+   num:
+      - 1248090
+      - 4568
+   str: |-
+      - stree
+        stree1
+      - seeee
+
+user:
+   names:
+     ENC(QtQod0mNMlgDgNowqc2oMQ==)
+   password:
+     ENC(uQFEtY6pj9m0qu7lTwbA48+Xfnhx9F3m)
+
+#04OYfEQYDLpSb+mLA4NSmg==
+#wnuit5JWMbJIWvFaT8Ic4a1egT8+U+gy
