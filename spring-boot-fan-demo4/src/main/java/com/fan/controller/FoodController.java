@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 @RestController
 public class FoodController {
-//    @Value("${food.meat}")
+    //    @Value("${food.meat}")
 //    private String meat;
 //    @Value("${food.rice}")
 //    private String rice;
@@ -22,7 +22,7 @@ public class FoodController {
 //    private String[] seasoning;
     @Value("${boo}")
     private boolean boo;
-//    @Value("${num}")
+    //    @Value("${num}")
 //    private int[] nums;
 //    @Value("${str}")
 //    private String[] strs;
@@ -30,24 +30,27 @@ public class FoodController {
     private EmpConfig empConfig;
     @Autowired
     private FoodConfig foodConfig;
+
     @RequestMapping("/food")
-    public Food meatRice(){
-        Food food=new Food();
+    public Food meatRice() {
+        Food food = new Food();
         food.setMeat(foodConfig.getMeat());
         food.setRice(foodConfig.getRice());
         food.setSeasoning(foodConfig.getSeasoning());
-        System.out.println(boo+" : "+ Arrays.toString(empConfig.getNum())+" : "+Arrays.toString(empConfig.getStr()));
+        System.out.println(boo + " : " + Arrays.toString(empConfig.getNum()) + " : " + Arrays.toString(empConfig.getStr()));
         return food;
     }
+
     @Autowired
     private User user;
+
     @RequestMapping("/nameAndPassword")
-    public String nameAndPassword(){
-        BasicTextEncryptor textEncryptor=new BasicTextEncryptor();
+    public String nameAndPassword() {
+        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
         textEncryptor.setPassword("147258369");
-        String $name=textEncryptor.encrypt("hehe");
-        String $password=textEncryptor.encrypt("hehe123456");
-        System.out.println($name+"   "+$password);
+        String $name = textEncryptor.encrypt("hehe");
+        String $password = textEncryptor.encrypt("hehe123456");
+        System.out.println($name + "   " + $password);
 //        StringBuffer stringBuffer=new StringBuffer();String name,String password$name+":"+$password
 //        stringBuffer.append(user.getName()[0]);
 //        stringBuffer.append("    ");

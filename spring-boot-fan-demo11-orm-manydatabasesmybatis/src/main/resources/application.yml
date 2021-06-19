@@ -1,0 +1,15 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    db1:
+      jdbc-url: jdbc:mysql://localhost:3306/test?userSSL=false&characterEncoding=utf-8&serverTimezone=UTC
+      username: root
+      password: 123456
+    db2:
+      jdbc-url: jdbc:mysql://localhost:3306/test1?userSSL=false&characterEncoding=utf-8&serverTimezone=UTC
+      username: root
+      password: 123456
+  #config-location: classpath:mybatis-config.xml
+  #type-aliases-package: com.fan.model
+  #mapper-locations: classpath*:static/mapper/*.xml

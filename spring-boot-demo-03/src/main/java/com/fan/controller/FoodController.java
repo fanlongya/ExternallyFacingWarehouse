@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class FoodController {
     @Autowired
     private FoodRice foodRice;
+
     @RequestMapping("/friedRice")
-    public Food friedRice(){
-        Food food=new Food();
+    public Food friedRice() {
+        Food food = new Food();
         food.setMeat(foodRice.getMeat());
         food.setRice(foodRice.getRice());
         return food;

@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ConfigurationProperties("user")
-@Getter@Setter
+@Getter
+@Setter
 public class User {
     private String names;
     private String password;
