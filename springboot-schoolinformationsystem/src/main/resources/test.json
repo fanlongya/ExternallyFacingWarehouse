@@ -1,0 +1,4072 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "这是一个学校的信息管理系统，为学校的日常运作提供便捷的帮助，实现学校管理的信息化，使学校的管理更便捷。",
+    "version": "1.0.1",
+    "title": "学校信息管理系统"
+  },
+  "host": "localhost:8090",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "班级管理控制类",
+      "description": "这是一个管理班级的新增，删除，修改，查询"
+    },
+    {
+      "name": "用户管理类",
+      "description": "对用户进行新增，修改，删除，查询等操作"
+    },
+    {
+      "name": "老师选课管理类",
+      "description": "为老师提供选课时所需要得一些数据，选课后的一些写入操作"
+    },
+    {
+      "name": "这是学生管理类",
+      "description": "为学生提供新增，删除，查找数据的操作"
+    }
+  ],
+  "paths": {
+    "/classed/deleteClassed/{classId}": {
+      "delete": {
+        "tags": [
+          "班级管理控制类"
+        ],
+        "summary": "这是删除班级方法",
+        "operationId": "deleteClassedUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "classId",
+            "in": "path",
+            "description": "classId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/classed/insertClassed": {
+      "post": {
+        "tags": [
+          "班级管理控制类"
+        ],
+        "summary": "这是新增班级方法",
+        "operationId": "addClassedUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "classId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].courseId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].endTime",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "courseList[0].faculty",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].semester",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].startTime",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "courseList[0].subject.createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].subject.createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.describe1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].subject.name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].subject.subjectId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].subject.yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].subjectId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.age",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.birthday",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "courseList[0].teacher.classId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.classed.classId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.classed.teacherId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.classed.yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.college",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.faculty",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.profession",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].describe1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].roleId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.sex",
+            "in": "query",
+            "required": false,
+            "type": "ref"
+          },
+          {
+            "name": "courseList[0].teacher.userId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacherId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "teacherId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "string"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/classed/selectClassed/{classId}": {
+      "get": {
+        "tags": [
+          "班级管理控制类"
+        ],
+        "summary": "这是根据班级ID查看班级方法",
+        "operationId": "selectClassedUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "classId",
+            "in": "path",
+            "description": "classId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Classed"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/classed/selectClasses": {
+      "get": {
+        "tags": [
+          "班级管理控制类"
+        ],
+        "summary": "这是查看全部班级方法",
+        "operationId": "selectClassedesUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/classed/updateClassed": {
+      "put": {
+        "tags": [
+          "班级管理控制类"
+        ],
+        "summary": "这是修改班级方法",
+        "operationId": "updateClassedesUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "classId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].courseId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].endTime",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "courseList[0].faculty",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].semester",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].startTime",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "courseList[0].subject.createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].subject.createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].subject.describe1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].subject.name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].subject.subjectId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].subject.yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].subjectId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.age",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.birthday",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "courseList[0].teacher.classId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.classed.classId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.classed.name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.classed.teacherId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.classed.yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.college",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.faculty",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.profession",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].describe1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].roleId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.roleList[0].yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacher.sex",
+            "in": "query",
+            "required": false,
+            "type": "ref"
+          },
+          {
+            "name": "courseList[0].teacher.userId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].teacher.yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "courseList[0].teacherId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseList[0].yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "teacherId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/student/insertusco": {
+      "post": {
+        "tags": [
+          "这是学生管理类"
+        ],
+        "summary": "根据参数用户id和课程id，为用户课程表创建数据，参数课程id是一个字符串，由都个课程id中加','组成例：courseId,courseId,courseId...",
+        "operationId": "insertUserCourseUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "courseIdStr",
+            "in": "query",
+            "description": "courseIdStr",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "userId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/student/selectCourse/{userId}": {
+      "get": {
+        "tags": [
+          "这是学生管理类"
+        ],
+        "summary": "根据参数学生id，查询用户所要得当前学期的课程",
+        "operationId": "selectCourseOfUserIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Course"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/student/selectUser/{userId}": {
+      "get": {
+        "tags": [
+          "这是学生管理类"
+        ],
+        "summary": "根据参数学生id，查询用户所有信息",
+        "operationId": "selectUserOfUserIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/student/selectoc/{classId}": {
+      "get": {
+        "tags": [
+          "这是学生管理类"
+        ],
+        "summary": "这是根据学生的用户表内的班级id，找到老师为班级选好的课程",
+        "operationId": "selectOfClassIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "classId",
+            "in": "path",
+            "description": "classId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/teacher/insertClassedCourse": {
+      "post": {
+        "tags": [
+          "老师选课管理类"
+        ],
+        "summary": "根据参数班级id和课程id，为班级课程表创建数据，参数课程id是一个字符串，由都个课程id中加','组成",
+        "operationId": "insertClassedCourseUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "classId",
+            "in": "query",
+            "description": "classId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "courseIdStr",
+            "in": "query",
+            "description": "courseIdStr",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/teacher/selectAllCoOfSeFa": {
+      "get": {
+        "tags": [
+          "老师选课管理类"
+        ],
+        "summary": "根据老师的院系和学期找到相应的在选课时间内的所有的课程",
+        "operationId": "selectAllCourseOfSemesterFacultyUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "faculty",
+            "in": "query",
+            "description": "faculty",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "semester",
+            "in": "query",
+            "description": "semester",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/teacher/selectClassOfTeacherId/{teacherId}": {
+      "get": {
+        "tags": [
+          "老师选课管理类"
+        ],
+        "summary": "根据老师Id找到相应的班级id",
+        "operationId": "selectClassOfTeacherIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "teacherId",
+            "in": "path",
+            "description": "teacherId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/teacher/selectacoci/{classId}": {
+      "get": {
+        "tags": [
+          "老师选课管理类"
+        ],
+        "summary": "根据班级id找到相应有关联的的所有的课程相关信息",
+        "operationId": "selectAllCourseOfClassIdUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "classId",
+            "in": "path",
+            "description": "classId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Course"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/Update": {
+      "put": {
+        "tags": [
+          "用户管理类"
+        ],
+        "summary": "这是修改用户的方法",
+        "operationId": "updateUserUsingPUT",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "age",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "birthday",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "classId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.classId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].courseId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].endTime",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "classed.courseList[0].faculty",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].semester",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].startTime",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.describe1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].subject.name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].subject.subjectId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].subject.yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].subjectId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].teacher.age",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.birthday",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "classed.courseList[0].teacher.classId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].teacher.college",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.faculty",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.profession",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].describe1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].roleId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.sex",
+            "in": "query",
+            "required": false,
+            "type": "ref"
+          },
+          {
+            "name": "classed.courseList[0].teacher.userId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].teacher.yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacherId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.teacherId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "college",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "faculty",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "profession",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "roleList[0].createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "roleList[0].createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].describe1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "roleList[0].name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "roleList[0].roleId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "roleList[0].yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sex",
+            "in": "query",
+            "required": false,
+            "type": "ref"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/delete/{userId}": {
+      "delete": {
+        "tags": [
+          "用户管理类"
+        ],
+        "summary": "这是删除用户的方法",
+        "operationId": "deleteUserUsingDELETE",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/insert": {
+      "post": {
+        "tags": [
+          "用户管理类"
+        ],
+        "summary": "这用户新增方法，同时会根据参数角色id，在用户和角色的关联表新增数据",
+        "operationId": "addUserUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "age",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "birthday",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "classId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.classId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].courseId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].endTime",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "classed.courseList[0].faculty",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].semester",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].startTime",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].subject.describe1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].subject.name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].subject.subjectId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].subject.yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].subjectId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].teacher.age",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.birthday",
+            "in": "query",
+            "required": false,
+            "type": "string",
+            "format": "date"
+          },
+          {
+            "name": "classed.courseList[0].teacher.classId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].teacher.college",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.faculty",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.profession",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].describe1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].roleId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].teacher.roleList[0].yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacher.sex",
+            "in": "query",
+            "required": false,
+            "type": "ref"
+          },
+          {
+            "name": "classed.courseList[0].teacher.userId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].teacher.yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.courseList[0].teacherId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.courseList[0].yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "classed.name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "classed.teacherId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "classed.yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "college",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "faculty",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "profession",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "roleId",
+            "in": "query",
+            "description": "roleId",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "roleList[0].createTime.date",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.day",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.hours",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.minutes",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.month",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.nanos",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.seconds",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.time",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "roleList[0].createTime.timezoneOffset",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].createTime.year",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].deleteFlag",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "roleList[0].describe1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "roleList[0].name",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "roleList[0].roleId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "roleList[0].yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "sex",
+            "in": "query",
+            "required": false,
+            "type": "ref"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "yl1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/selectAll": {
+      "get": {
+        "tags": [
+          "用户管理类"
+        ],
+        "summary": "这是查询所有用户的方法",
+        "operationId": "selectOneUserUsingGET",
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/selectOne/{userId}": {
+      "get": {
+        "tags": [
+          "用户管理类"
+        ],
+        "summary": "这是用户查询方法，根据用户id查询相应用户",
+        "operationId": "selectOneUserUsingGET_1",
+        "produces": [
+          "*/*"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "userId",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+    "Character": {
+      "type": "object",
+      "title": "Character"
+    },
+    "Classed": {
+      "type": "object",
+      "properties": {
+        "classId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "courseList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Course"
+          }
+        },
+        "createTime": {
+          "$ref": "#/definitions/Timestamp"
+        },
+        "deleteFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "name": {
+          "type": "string"
+        },
+        "teacherId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "yl1": {
+          "type": "string"
+        }
+      },
+      "title": "Classed"
+    },
+    "Course": {
+      "type": "object",
+      "properties": {
+        "courseId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "createTime": {
+          "$ref": "#/definitions/Timestamp"
+        },
+        "deleteFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "endTime": {
+          "type": "string",
+          "format": "date"
+        },
+        "faculty": {
+          "type": "string"
+        },
+        "semester": {
+          "type": "string"
+        },
+        "startTime": {
+          "type": "string",
+          "format": "date"
+        },
+        "subject": {
+          "$ref": "#/definitions/Subject"
+        },
+        "subjectId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "teacher": {
+          "$ref": "#/definitions/User"
+        },
+        "teacherId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "yl1": {
+          "type": "string"
+        }
+      },
+      "title": "Course"
+    },
+    "Role": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "$ref": "#/definitions/Timestamp"
+        },
+        "deleteFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "describe1": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "roleId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "yl1": {
+          "type": "string"
+        }
+      },
+      "title": "Role"
+    },
+    "Subject": {
+      "type": "object",
+      "properties": {
+        "createTime": {
+          "$ref": "#/definitions/Timestamp"
+        },
+        "deleteFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "describe1": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "subjectId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "yl1": {
+          "type": "string"
+        }
+      },
+      "title": "Subject"
+    },
+    "Timestamp": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "day": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hours": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minutes": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "month": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "nanos": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "seconds": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "time": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "timezoneOffset": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "year": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "Timestamp"
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "age": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "birthday": {
+          "type": "string",
+          "format": "date"
+        },
+        "classId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "classed": {
+          "$ref": "#/definitions/Classed"
+        },
+        "college": {
+          "type": "string"
+        },
+        "createTime": {
+          "$ref": "#/definitions/Timestamp"
+        },
+        "deleteFlag": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "faculty": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "profession": {
+          "type": "string"
+        },
+        "roleList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Role"
+          }
+        },
+        "sex": {
+          "$ref": "#/definitions/Character"
+        },
+        "userId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "yl1": {
+          "type": "string"
+        }
+      },
+      "title": "User"
+    }
+  }
+}

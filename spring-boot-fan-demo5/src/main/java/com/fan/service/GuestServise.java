@@ -1,5 +1,4 @@
 package com.fan.service;
-
 import com.fan.mapper.GuestDao;
 import com.fan.domain.Guest;
 import org.springframework.beans.factory.annotation.Autowired;

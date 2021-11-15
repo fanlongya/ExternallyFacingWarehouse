@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ArithmeticArray/ArithmeticArray.iml" filepath="$PROJECT_DIR$/ArithmeticArray/ArithmeticArray.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ExternallyFacingWarehouse.iml" filepath="$PROJECT_DIR$/.idea/ExternallyFacingWarehouse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-fan-demo12-ErrorAndException/demo (1).iml" filepath="$PROJECT_DIR$/spring-boot-fan-demo12-ErrorAndException/demo (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-fan-demo7-orm-jpa/demo (2).iml" filepath="$PROJECT_DIR$/spring-boot-fan-demo7-orm-jpa/demo (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-fan-demo8-orm-mybatis/demo (3).iml" filepath="$PROJECT_DIR$/spring-boot-fan-demo8-orm-mybatis/demo (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-fan-demo13-servlet/spring-boot-fan-demo13-servlet.iml" filepath="$PROJECT_DIR$/spring-boot-fan-demo13-servlet/spring-boot-fan-demo13-servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-fan-demo5/spring-boot-fan-demo5.iml" filepath="$PROJECT_DIR$/spring-boot-fan-demo5/spring-boot-fan-demo5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-schoolinformationsystem/springboot-schoolinformationsystem.iml" filepath="$PROJECT_DIR$/springboot-schoolinformationsystem/springboot-schoolinformationsystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test1-myClassLoader/test1-MyClassLoader.iml" filepath="$PROJECT_DIR$/test1-myClassLoader/test1-MyClassLoader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test1-maven-testdemo1/test1-maven-testdemo1.iml" filepath="$PROJECT_DIR$/test1-maven-testdemo1/test1-maven-testdemo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test2-testdemo2/test2-testdemo2.iml" filepath="$PROJECT_DIR$/test2-testdemo2/test2-testdemo2.iml" />
+    </modules>
+  </component>
+</project>

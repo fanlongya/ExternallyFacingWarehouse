@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/spring-boot-fan-demo12-ErrorAndException/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-fan-demo12-ErrorAndException/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-fan-demo13-servlet/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-fan-demo5/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-fan-demo7-orm-jpa/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-fan-demo7-orm-jpa/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-fan-demo8-orm-mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-boot-fan-demo8-orm-mybatis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-schoolinformationsystem/src/main/java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
